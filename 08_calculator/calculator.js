@@ -6,20 +6,22 @@ const subtract = function(a,b) {
   return a-b;
 };
 
-const sum = function() {
-  let arr = Array.prototype.slice.call(arguments);
+const sum = function(arr) {
   let sum = 0;
+  if(arr.length === 0){
+    return sum;
+  }
   for(let i of arr){
-    sum+=i;
+    sum = sum + parseInt(i);
   }
   return sum;
 };
 
-const multiply = function() {
-  let arr = Array.prototype.slice.call(arguments);
-  let mul = 0;
+const multiply = function(arr) {
+
+  let mul = 1;
   for(let i of arr){
-    mul = mul * i;
+    mul = mul * parseInt(i);
   }
   return mul;
 };
@@ -29,12 +31,14 @@ const power = function(a, b) {
 };
 
 const factorial = function(n) {
-	if(n === 0 || n === 1){
+  let result = 1;
+  if(n === 0 || n ===1){
     return 1;
   }
-  else{
-    return n*function(n-1);
+  for(let i = n; i >= 1; i--){
+    result  = result * i;
   }
+  return result;
 };
 
 // Do not edit below this line

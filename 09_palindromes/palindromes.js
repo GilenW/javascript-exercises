@@ -1,8 +1,20 @@
 const palindromes = function (string) {
-    const arr = string.split(" ").split(",").split(".").split('');
+
+    string = string.replace(/[^a-zA-Z ]/g, "");
+    string = string.replace(/ /g, "");
+    string = string.toLowerCase();
+    const arr = string.split('');
     
     let readPointer = 0;
-    for()
+    let index = arr.length - 1;
+    while(index !== readPointer){
+        if(arr[readPointer] !== arr[index]){
+            return false;
+        }
+        index--;
+        readPointer++;
+    }
+    return true;
 };
 
 // Do not edit below this line
